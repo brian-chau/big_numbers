@@ -41,10 +41,18 @@ def add(str1, str2):
     return str3
 
 if __name__ == '__main__':
+	sum_naturally = 0
 	with open('test.txt') as f:
 		lines = f.readlines()
+		for line in lines:
+			sum_naturally += int(line)
 
 	string = "0"
 	for line in lines:
 		string = add(string,line.strip())
+
+	print("Sum through algorithm: ")
 	print(string)
+	
+	print("Sum using Python's handling: ")
+	print(sum_naturally)
